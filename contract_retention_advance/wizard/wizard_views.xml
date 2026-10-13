@@ -65,7 +65,7 @@
                                     <div class="cra_report_output_buttons">
                                         <button name="action_print"
                                                 type="object"
-                                                class="btn btn-secondary"
+                                                class="btn btn-primary"
                                                 invisible="not report_generated">
                                             <span>Print</span>
                                             <i class="fa fa-print ms-2"
@@ -74,7 +74,7 @@
 
                                         <button name="action_pdf"
                                                 type="object"
-                                                class="btn btn-secondary"
+                                                class="btn btn-primary"
                                                 invisible="not report_generated">
                                             <span>PDF</span>
                                             <i class="fa fa-file-pdf-o ms-2"
@@ -83,7 +83,7 @@
 
                                         <button name="action_export"
                                                 type="object"
-                                                class="btn btn-secondary"
+                                                class="btn btn-primary"
                                                 invisible="not report_generated">
                                             <span>Excel</span>
                                             <i class="fa fa-file-excel-o ms-2"
