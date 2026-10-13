@@ -1,0 +1,15 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_advance_accountant,advance accountant,model_contract_advance,account.group_account_user,1,1,1,1
+access_retention_accountant,retention accountant,model_contract_retention,account.group_account_user,1,1,1,0
+access_movement_accountant,movement accountant,model_contract_movement,account.group_account_user,1,1,1,0
+access_advance_reader,advance reader,model_contract_advance,account.group_account_readonly,1,0,0,0
+access_retention_reader,retention reader,model_contract_retention,account.group_account_readonly,1,0,0,0
+access_movement_reader,movement reader,model_contract_movement,account.group_account_readonly,1,0,0,0
+access_release,retention release,model_contract_retention_release_wizard,account.group_account_user,1,1,1,1
+access_report,contract report,model_contract_financial_report,account.group_account_readonly,1,1,1,1
+access_report_accountant,contract report accountant,model_contract_financial_report,account.group_account_user,1,1,1,1
+access_report_line,contract report line,model_contract_financial_report_line,account.group_account_readonly,1,1,1,1
+access_report_line_accountant,contract report line accountant,model_contract_financial_report_line,account.group_account_user,1,1,1,1
+access_payment_reconcile,contract payment reconciliation,model_contract_payment_reconcile_wizard,account.group_account_user,1,1,1,1
+
+access_contract_bank_receipt,contract bank receipt wizard,model_contract_bank_receipt_wizard,account.group_account_user,1,1,1,1
