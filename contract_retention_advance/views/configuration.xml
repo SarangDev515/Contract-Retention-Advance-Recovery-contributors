@@ -1,0 +1,7 @@
+<odoo><record id="contract_settings" model="ir.ui.view"><field name="name">Contract accounting settings</field><field name="model">res.config.settings</field><field name="inherit_id" ref="account.res_config_settings_view_form"/><field name="arch" type="xml">
+  <xpath expr="//app[@name='account']" position="inside"><block title="Contract Retention and Advances" name="contract_retention_settings">
+    <setting string="Enable contract accounting" company_dependent="1"><field name="cra_enabled"/></setting>
+    <setting string="Defaults" company_dependent="1"><div class="content-group"><label for="cra_retention_percent"/><field name="cra_retention_percent"/><label for="cra_recovery_percent"/><field name="cra_recovery_percent"/></div></setting>
+    <setting string="Transfer accounts" company_dependent="1"><div class="content-group"><label for="cra_retention_account_id"/><field name="cra_retention_account_id" domain="[('company_ids', 'in', [company_id]), ('account_type', '=', 'asset_current'), ('reconcile', '=', True)]"/><label for="cra_advance_account_id"/><field name="cra_advance_account_id" domain="[('company_ids', 'in', [company_id]), ('account_type', '=', 'liability_current'), ('reconcile', '=', True)]"/><label for="cra_journal_id"/><field name="cra_journal_id" domain="[('company_id', '=', company_id), ('type', '=', 'general')]"/></div></setting>
+    <setting string="Handover date policy" company_dependent="1"><field name="cra_due_policy"/></setting>
+  </block></xpath></field></record></odoo>
