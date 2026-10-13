@@ -1,0 +1,167 @@
+/* Scope against a concrete rendered panel, rather than a form architecture class. */
+.o_action:has(.cra_report_filter_panel) .o_control_panel,
+.o_form_view:has(.cra_report_filter_panel) .o_control_panel {
+    display: none !important;
+}
+.o_form_view:has(.cra_report_filter_panel) .o_form_sheet_bg > .o_form_sheet {
+    max-width: none;
+    width: calc(100% - 32px);
+}
+.cra_report_filter_panel {
+    background: #f7f8fa;
+    border: 1px solid #dfe3e8;
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin-bottom: 24px;
+}
+.cra_report_filter_panel h3 {
+    font-size: 17px;
+    margin: 0 0 16px;
+}
+.cra_report_panel_buttons {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+}
+.cra_report_results_title h1 {
+    font-size: 26px;
+    margin: 0 0 20px;
+}
+
+/* Compact full-width reporting screen. */
+.o_form_view:has(.cra_report_filter_panel) .o_form_sheet_bg {
+    padding: 0 !important;
+}
+.o_form_view:has(.cra_report_filter_panel) .o_form_sheet_bg > .o_form_sheet {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 16px !important;
+    min-height: calc(100vh - 64px);
+}
+.cra_report_filter_panel {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 14px;
+    padding: 12px 16px;
+    overflow-x: auto;
+}
+.cra_report_filter_item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1 1 160px;
+    min-width: 150px;
+}
+.cra_report_filter_item > label {
+    white-space: nowrap;
+    margin: 0;
+    font-weight: 500;
+}
+.cra_report_filter_item > .o_field_widget {
+    min-width: 90px;
+    flex: 1;
+    margin: 0;
+}
+.cra_report_panel_buttons {
+    flex: 0 0 auto;
+    margin: 0;
+    white-space: nowrap;
+}
+.cra_report_results_title h1 {
+    text-align: center;
+    margin: 20px 0 24px;
+}
+
+/* Odoo also caps the renderer and sheet background, not just the sheet. */
+.o_form_view:has(.cra_report_filter_panel) .o_form_renderer,
+.o_form_renderer:has(.cra_report_filter_panel),
+.o_form_view:has(.cra_report_filter_panel) .o_form_sheet_bg {
+    width: 100% !important;
+    max-width: none !important;
+    flex: 1 1 auto !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+/* Buttons first; keep filters/title outside the results scrolling region. */
+.cra_report_filter_panel,
+.cra_report_results_title {
+    flex: 0 0 auto;
+}
+.o_form_view:has(.cra_report_filter_panel) .o_form_sheet_bg > .o_form_sheet {
+    display: flex;
+    flex-direction: column;
+    height: calc(100dvh - 64px);
+    min-height: 0;
+    overflow: hidden;
+}
+.cra_report_table_area {
+    display: flex;
+    flex: 1 1 auto;
+    min-height: 0;
+    width: 100%;
+    overflow: hidden;
+}
+.cra_report_table_area > .o_field_widget,
+.cra_report_table_area .o_field_x2many {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    min-width: 0;
+    min-height: 0;
+    width: 100%;
+    margin: 0;
+}
+.cra_report_table_area .o_list_renderer {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow: auto !important;
+}
+.cra_report_table_area .o_list_table thead {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background: var(--o-view-background-color, #fff);
+}
+
+.cra_report_date_range {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin: -12px 0 20px;
+    font-size: 14px;
+}
+.cra_report_date_range .o_field_widget {
+    width: auto !important;
+    margin: 0;
+}
+.cra_report_table_area .o_list_table thead th,
+.cra_report_table_area .o_list_table thead th .o_column_title {
+    font-weight: 700 !important;
+}
+
+/* Account for the report action toolbar above the filter/results sheet. */
+.o_form_view:has(.cra_report_filter_panel) .o_form_sheet_bg > .o_form_sheet {
+    height: calc(100dvh - 112px);
+}
+
+/* Report actions share the single filter row; there is no separate toolbar. */
+.cra_report_panel_buttons { align-items: center; gap: 6px; }
+.cra_report_panel_buttons .btn { white-space: nowrap; border-radius: 3px; padding: 6px 10px; }
+.o_form_view:has(.cra_report_filter_panel) .o_form_sheet_bg > .o_form_sheet { height: calc(100dvh - 64px); }
+
+/* Two-row action group matching the requested reference. */
+.cra_report_panel_buttons.cra_report_buttons_stacked {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+.cra_report_output_buttons { display: flex; gap: 6px; align-items: center; }
+.cra_report_output_buttons .btn { min-width: 64px; }
+.cra_report_get_button { min-width: 100px; align-self: center; }
+
+.cra_report_table_area .o_is_line_section td { font-weight: 700 !important; font-size: inherit !important; background: #f3f0f7; }
