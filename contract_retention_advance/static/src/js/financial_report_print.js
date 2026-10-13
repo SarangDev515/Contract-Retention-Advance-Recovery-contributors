@@ -25,6 +25,9 @@ function installFilterToggleStyles() {
             grid-template-rows: 1fr;
             flex: 0 0 auto;
             min-height: 0;
+            position: relative;
+            z-index: 50;
+            overflow: visible;
             opacity: 1;
             transition:
                 grid-template-rows 280ms ease,
@@ -33,7 +36,7 @@ function installFilterToggleStyles() {
 
         .cra_report_single_screen .cra_report_filter_slide_inner {
             min-height: 0;
-            overflow: hidden;
+            overflow: visible;
             transform: translateY(0);
             transition: transform 280ms ease;
         }
@@ -46,7 +49,22 @@ function installFilterToggleStyles() {
 
         .cra_report_single_screen
         .cra_filters_collapsed .cra_report_filter_slide_inner {
+            overflow: hidden;
             transform: translateY(-18px);
+        }
+
+        .cra_report_single_screen .cra_report_filter_panel {
+            overflow: visible !important;
+        }
+
+        .cra_report_single_screen
+        .cra_filters_collapsed .cra_report_filter_panel {
+            overflow: hidden !important;
+        }
+
+        .cra_report_single_screen
+        .cra_report_filter_panel .o-autocomplete--dropdown-menu {
+            z-index: 1055;
         }
 
         .cra_report_single_screen .cra_report_toggle_bar {
