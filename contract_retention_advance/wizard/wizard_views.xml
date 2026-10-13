@@ -111,18 +111,18 @@
                                 <div class="cra_report_filter_item">
                                     <label for="company_id"/>
                                     <field name="company_id"
-                                           options="{'no_create': True, 'no_create_edit': True}"
+                                           options="{'no_create': True, 'no_quick_create': True, 'no_create_edit': True, 'no_open': True}"
                                            domain="[('id', 'in', context.get('allowed_company_ids', []))]"/>
                                 </div>
 
                                 <div class="cra_report_filter_item">
                                     <label for="partner_id"/>
-                                    <field name="partner_id"/>
+                                    <field name="partner_id" options="{'no_create': True, 'no_quick_create': True, 'no_create_edit': True, 'no_open': True}"/>
                                 </div>
 
                                 <div class="cra_report_filter_item">
                                     <label for="project_id"/>
-                                    <field name="project_id"/>
+                                    <field name="project_id" options="{'no_create': True, 'no_quick_create': True, 'no_create_edit': True, 'no_open': True}"/>
                                 </div>
 
                             </div>
