@@ -1,0 +1,7 @@
+<odoo>
+  <record id="advance_company_rule" model="ir.rule"><field name="name">Advance companies</field><field name="model_id" ref="model_contract_advance"/><field name="domain_force">[('company_id', 'in', company_ids)]</field></record>
+  <record id="retention_company_rule" model="ir.rule"><field name="name">Retention companies</field><field name="model_id" ref="model_contract_retention"/><field name="domain_force">[('company_id', 'in', company_ids)]</field></record>
+  <record id="movement_company_rule" model="ir.rule"><field name="name">Movement companies</field><field name="model_id" ref="model_contract_movement"/><field name="domain_force">[('company_id', 'in', company_ids)]</field></record>
+  <record id="release_company_rule" model="ir.rule"><field name="name">Release companies</field><field name="model_id" ref="model_contract_retention_release_wizard"/><field name="domain_force">[('company_id', 'in', company_ids)]</field></record>
+  <record id="report_line_company_rule" model="ir.rule"><field name="name">Report companies</field><field name="model_id" ref="model_contract_financial_report_line"/><field name="domain_force">[('company_id', 'in', company_ids)]</field></record>
+</odoo>
