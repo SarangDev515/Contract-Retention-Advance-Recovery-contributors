@@ -5,7 +5,7 @@
     'category': 'Accounting/Accounting',
     'summary': 'Progress invoice retention, deliberate customer advances and audited releases',
     'author': 'SARANG T',
-    'price': 1.00,
+    'price': 7.50,
     'currency': 'USD',
     'license': 'OPL-1',
     "images": ["static/description/banner.png"],
