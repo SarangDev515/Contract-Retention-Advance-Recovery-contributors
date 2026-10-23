@@ -1,231 +1,469 @@
-<section style="padding:20px 0;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;color:#333333;line-height:1.6;background-color:#ffffff;">
-<div style="max-width:960px;margin:0 auto;padding:0 15px;">
+<style>
+  .odoo-app-doc {
+    font-family: "Lucida Grande", Helvetica, Verdana, Arial, sans-serif;
+    color: #333333;
+    line-height: 1.6;
+    background-color: #ffffff;
+    padding: 20px 0;
+  }
+  .odoo-app-doc .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  .odoo-app-doc .header-banner {
+    background: linear-gradient(135deg, #392c69 0%, #4c3b88 100%);
+    padding: 35px;
+    border-radius: 8px;
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 12px rgba(57, 44, 105, 0.15);
+  }
+  .odoo-app-doc h2 {
+    color: #392c69;
+    font-size: 20px;
+    margin: 40px 0 15px;
+    padding-left: 12px;
+    border-left: 5px solid #1d9e75;
+  }
+  .odoo-app-doc .balance-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 15px;
+    margin-bottom: 25px;
+  }
+  .odoo-app-doc .balance-card {
+    background: #fdfdfd;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 20px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+  }
+  .odoo-app-doc .balance-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(29, 158, 117, 0.12);
+    border-color: #1d9e75;
+  }
+  .odoo-app-doc .flow-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 20px 0;
+  }
+  .odoo-app-doc .flow-step {
+    display: flex;
+    align-items: center;
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    padding: 15px 20px;
+    transition: all 0.2s ease;
+  }
+  .odoo-app-doc .flow-step:hover {
+    background: #f0fdf4;
+    border-color: #1d9e75;
+    transform: translateX(4px);
+  }
+  .odoo-app-doc .flow-num {
+    background: #392c69;
+    color: #ffffff;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-right: 15px;
+    flex-shrink: 0;
+  }
+  .odoo-app-doc .table-styled {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  .odoo-app-doc .table-styled th {
+    background-color: #ede8f7;
+    color: #392c69;
+    padding: 12px;
+    border: 1px solid #e2e8f0;
+    text-align: left;
+  }
+  .odoo-app-doc .table-styled td {
+    padding: 12px;
+    border: 1px solid #e2e8f0;
+  }
+  .odoo-app-doc .table-styled tr:hover td {
+    background-color: #f8fafc;
+  }
+  .odoo-app-doc .callout-box {
+    background-color: #e9f6f0;
+    border: 1px solid #cfe8dc;
+    border-left: 4px solid #1d9e75;
+    padding: 16px;
+    border-radius: 4px;
+    color: #174b38;
+    margin: 20px 0;
+  }
+  .odoo-app-doc .warning-box {
+    background-color: #fff4d2;
+    border: 1px solid #fde68a;
+    border-left: 4px solid #e6bd45;
+    padding: 16px;
+    border-radius: 4px;
+    color: #78350f;
+    margin: 20px 0;
+  }
+</style>
 
-<!-- Header Banner -->
-<div style="background-color:#392c69;padding:30px;border-radius:6px;text-align:center;margin-bottom:30px;">
-<h1 style="color:#ffffff;font-size:28px;margin:0 0 10px;font-weight:bold;">Contract Retention &amp; Advance Recovery</h1>
-<p style="color:#ece7f9;font-size:15px;margin:0 0 15px;">Odoo 19 &middot; Accounting + Sales</p>
-<p style="color:#ffffff;font-size:16px;margin:0;max-width:800px;display:inline-block;">Track money received before work, apply it across progress invoices, hold contractual retention, and release it when it becomes collectible.</p>
-</div>
+<div class="odoo-app-doc">
+  <div class="container">
+    <!-- Header Banner -->
+    <div class="header-banner">
+      <h1
+        style="
+          color: #ffffff;
+          font-size: 28px;
+          margin: 0 0 10px;
+          font-weight: bold;
+        "
+      >
+        Contract Retention &amp; Advance Recovery
+      </h1>
+      <p style="color: #ece7f9; font-size: 15px; margin: 0 0 15px">
+        Odoo 19 &middot; Accounting + Sales
+      </p>
+      <p
+        style="
+          color: #ffffff;
+          font-size: 16px;
+          margin: 0;
+          max-width: 800px;
+          display: inline-block;
+        "
+      >
+        Track money received before work, apply it across progress invoices,
+        hold contractual retention, and release it when collectible.
+      </p>
+    </div>
 
-<!-- Section 1 -->
-<h2 style="color:#392c69;font-size:20px;margin:35px 0 10px;padding-left:10px;border-left:4px solid #1d9e75;">1. Three balances, three different questions</h2>
-<p style="margin-bottom:15px;">This module separates contract accounting from cash settlement. Do not use one balance as proof of another.</p>
-<div style="overflow-x:auto;">
-<table style="width:100%;border-collapse:collapse;margin-bottom:20px;">
-<thead>
-  <tr style="background-color:#ede8f7;text-align:left;">
-    <th style="padding:10px;border:1px solid #ddd;">Balance</th>
-    <th style="padding:10px;border:1px solid #ddd;">What it tells you</th>
-    <th style="padding:10px;border:1px solid #ddd;">What reduces it</th>
-  </tr>
-</thead>
-<tbody>
-  <tr>
-    <td style="padding:10px;border:1px solid #ddd;"><strong>Remaining advance</strong></td>
-    <td style="padding:10px;border:1px solid #ddd;">How much prepaid money is still available for future invoices.</td>
-    <td style="padding:10px;border:1px solid #ddd;">Posted advance recovery and its corrections.</td>
-  </tr>
-  <tr style="background-color:#fcfcfc;">
-    <td style="padding:10px;border:1px solid #ddd;"><strong>Remaining retention</strong></td>
-    <td style="padding:10px;border:1px solid #ddd;">How much contractual retention is still held.</td>
-    <td style="padding:10px;border:1px solid #ddd;">Posted release or retention corrections.</td>
-  </tr>
-  <tr>
-    <td style="padding:10px;border:1px solid #ddd;"><strong>Outstanding Receipts</strong></td>
-    <td style="padding:10px;border:1px solid #ddd;">Whether the incoming payment has been matched to bank receipt evidence.</td>
-    <td style="padding:10px;border:1px solid #ddd;">Bank reconciliation, not advance allocation.</td>
-  </tr>
-</tbody>
-</table>
-</div>
+    <!-- Section 1 -->
+    <h2>1. Three Balances, Three Different Questions</h2>
+    <p style="margin-bottom: 15px">
+      This module separates contract accounting from cash settlement. Hover over
+      each card to view details:
+    </p>
+    <div class="balance-grid">
+      <div class="balance-card">
+        <h4 style="color: #392c69; margin-top: 0">Remaining Advance</h4>
+        <p style="font-size: 14px; color: #555">
+          How much prepaid money is still available for future progress
+          invoices.
+        </p>
+        <p
+          style="font-size: 12px; color: #1d9e75; font-weight: bold; margin: 0"
+        >
+          Reduced by: Posted advance recovery &amp; corrections.
+        </p>
+      </div>
+      <div class="balance-card">
+        <h4 style="color: #392c69; margin-top: 0">Remaining Retention</h4>
+        <p style="font-size: 14px; color: #555">
+          How much contractual retention is currently held back.
+        </p>
+        <p
+          style="font-size: 12px; color: #1d9e75; font-weight: bold; margin: 0"
+        >
+          Reduced by: Posted release or retention corrections.
+        </p>
+      </div>
+      <div class="balance-card">
+        <h4 style="color: #392c69; margin-top: 0">Outstanding Receipts</h4>
+        <p style="font-size: 14px; color: #555">
+          Whether incoming customer payment is matched to bank receipt evidence.
+        </p>
+        <p
+          style="font-size: 12px; color: #1d9e75; font-weight: bold; margin: 0"
+        >
+          Reduced by: Bank reconciliation.
+        </p>
+      </div>
+    </div>
 
-<!-- Section 2 -->
-<h2 style="color:#392c69;font-size:20px;margin:35px 0 10px;padding-left:10px;border-left:4px solid #1d9e75;">2. Setup</h2>
-<p style="margin-bottom:10px;">In Accounting settings, open Contract Retention and Advances. Settings are company-specific.</p>
-<h3 style="font-size:16px;color:#392c69;margin-top:15px;">Contract transfer accounts</h3>
-<ul style="margin:5px 0 15px 20px;padding:0;">
-  <li>Enable contract accounting.</li>
-  <li>Configure a reconcilable current-asset account for retention.</li>
-  <li>Configure a reconcilable current-liability account for advances.</li>
-  <li>Select a miscellaneous journal for contract transfers.</li>
-  <li>Set default retention/recovery percentages and the handover-date policy.</li>
-</ul>
-<h3 style="font-size:16px;color:#392c69;margin-top:15px;">Bank settlement accounts</h3>
-<ul style="margin:5px 0 15px 20px;padding:0;">
-  <li>Configure the payment journal&rsquo;s actual Bank account.</li>
-  <li>Use a separate reconcilable Outstanding Receipts account.</li>
-  <li>Perform accounting actions with the required accountant access.</li>
-  <li>Confirm company, customer, currency and project before registering an advance.</li>
-</ul>
+    <!-- Section 2 -->
+    <h2>2. Configuration Setup</h2>
+    <p style="margin-bottom: 15px">
+      Configured under Accounting Settings &rarr; Contract Retention and
+      Advances (Company-specific):
+    </p>
+    <div
+      style="
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+      "
+    >
+      <div
+        style="
+          background: #f8fafc;
+          padding: 20px;
+          border-radius: 6px;
+          border: 1px solid #e2e8f0;
+        "
+      >
+        <h4 style="color: #392c69; margin-top: 0">
+          Contract Transfer Accounts
+        </h4>
+        <ul style="margin: 0; padding-left: 18px; font-size: 14px; color: #444">
+          <li>Enable contract accounting.</li>
+          <li>Reconcilable current-asset account for retention.</li>
+          <li>Reconcilable current-liability account for advances.</li>
+          <li>Miscellaneous journal for contract transfers.</li>
+        </ul>
+      </div>
+      <div
+        style="
+          background: #f8fafc;
+          padding: 20px;
+          border-radius: 6px;
+          border: 1px solid #e2e8f0;
+        "
+      >
+        <h4 style="color: #392c69; margin-top: 0">Bank Settlement Accounts</h4>
+        <ul style="margin: 0; padding-left: 18px; font-size: 14px; color: #444">
+          <li>Configure payment journal&rsquo;s actual Bank account.</li>
+          <li>Separate reconcilable Outstanding Receipts account.</li>
+          <li>Confirm company, customer, currency and project.</li>
+        </ul>
+      </div>
+    </div>
 
-<!-- Section 3 -->
-<h2 style="color:#392c69;font-size:20px;margin:35px 0 10px;padding-left:10px;border-left:4px solid #1d9e75;">3. Advances: receive once, recover across multiple invoices</h2>
-<p style="margin-bottom:15px;">An advance is assigned to a customer and, when applicable, a sales-order/project context. Registration reclassifies the posted payment&rsquo;s receivable credit into an advance liability.</p>
+    <!-- Section 3 -->
+    <h2>3. Advance Workflow: Receive Once, Recover Across Invoices</h2>
+    <div class="flow-container">
+      <div class="flow-step">
+        <div class="flow-num">1</div>
+        <div>
+          <strong>Confirm Payment:</strong> Create incoming customer payment
+          with a posted journal entry (receivable credit unmatched).
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">2</div>
+        <div>
+          <strong>Assign &amp; Register:</strong> Click
+          <em>Assign Contract Advance</em> and register advance liability
+          (assignment becomes immutable).
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">3</div>
+        <div>
+          <strong>Apply to Invoices:</strong> On a progress invoice, select
+          registered advance &amp; choose recovery percentage or fixed amount.
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">4</div>
+        <div>
+          <strong>Review Availability:</strong> Posting transfers recovered
+          amounts out of liability; remaining advance decreases.
+        </div>
+      </div>
+    </div>
 
-<div style="overflow-x:auto;">
-<table style="width:100%;border-collapse:collapse;margin-bottom:20px;">
-<thead>
-  <tr style="background-color:#ede8f7;text-align:left;">
-    <th style="padding:10px;border:1px solid #ddd;width:20%;">Step</th>
-    <th style="padding:10px;border:1px solid #ddd;">What to do</th>
-  </tr>
-</thead>
-<tbody>
-  <tr>
-    <td style="padding:10px;border:1px solid #ddd;"><strong>1. Confirm payment</strong></td>
-    <td style="padding:10px;border:1px solid #ddd;">Create an incoming customer payment with a posted journal entry. Its receivable credit must be entirely unmatched for registration.</td>
-  </tr>
-  <tr style="background-color:#fcfcfc;">
-    <td style="padding:10px;border:1px solid #ddd;"><strong>2. Assign &amp; register</strong></td>
-    <td style="padding:10px;border:1px solid #ddd;">Click Assign Contract Advance, check the assignment, then Register Advance Liability. The assignment becomes immutable.</td>
-  </tr>
-  <tr>
-    <td style="padding:10px;border:1px solid #ddd;"><strong>3. Apply to invoices</strong></td>
-    <td style="padding:10px;border:1px solid #ddd;">On a progress invoice, select the registered advance. Choose a percentage of eligible untaxed work or a fixed recovery amount.</td>
-  </tr>
-  <tr style="background-color:#fcfcfc;">
-    <td style="padding:10px;border:1px solid #ddd;"><strong>4. Review availability</strong></td>
-    <td style="padding:10px;border:1px solid #ddd;">Posting transfers the recovered amount out of the advance liability. Recovered increases; remaining advance decreases.</td>
-  </tr>
-</tbody>
-</table>
-</div>
+    <div class="callout-box">
+      <strong>Example Breakdown:</strong> Advance of
+      <strong>6,000 SAR</strong> &mdash; Recovered 2,000 SAR, remaining
+      available <strong>4,000 SAR</strong>. Recovery cannot exceed available
+      advance or eligible untaxed work.
+    </div>
 
-<div style="background-color:#e9f6f0;border:1px solid #cfe8dc;padding:15px;border-radius:6px;color:#174b38;margin-bottom:20px;">
-<strong>Example: advance of 6,000 SAR</strong> &mdash; Recovered 2,000 SAR, still available 4,000 SAR.<br/>
-Further invoices can use the remaining advance. Recovery cannot exceed the available advance or eligible untaxed work. Customer, company, currency and project must match the invoice.
-</div>
+    <!-- Section 4 -->
+    <h2>4. Invoice Breakdown Example</h2>
+    <p style="margin-size: 14px; color: #555">
+      Untaxed work: 10,000 SAR | Tax: 1,500 SAR | Retention: 10% | Recovery: 20%
+      | Gross Invoice: <strong>11,500 SAR</strong>
+    </p>
+    <table class="table-styled">
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Calculation</th>
+          <th>Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Retention Deduction (Held)</td>
+          <td>10,000 &times; 10%</td>
+          <td><strong>1,000 SAR</strong></td>
+        </tr>
+        <tr>
+          <td>Advance Recovery</td>
+          <td>10,000 &times; 20%</td>
+          <td><strong>2,000 SAR</strong></td>
+        </tr>
+        <tr style="background: #f0fdf4">
+          <td><strong>Immediate Payable Before Cash</strong></td>
+          <td>11,500 &minus; 1,000 &minus; 2,000</td>
+          <td><strong>8,500 SAR</strong></td>
+        </tr>
+      </tbody>
+    </table>
 
-<!-- Visual Process Box (App Store safe workflow visualization) -->
-<div style="background-color:#f8f9fa;border:1px solid #e9ecef;padding:20px;border-radius:6px;margin-bottom:30px;">
-  <h4 style="color:#392c69;margin-top:0;font-size:15px;text-transform:uppercase;letter-spacing:0.5px;">Workflow: Advance Receipt to Recovery</h4>
-  <p style="font-size:13px;color:#555;margin-bottom:15px;">Follow this sequence to clear prepaid balances correctly:</p>
-  <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;">
-    <div style="background:#ffffff;border:1px solid #cbd5e1;padding:10px 15px;border-radius:4px;font-size:13px;flex:1;min-width:180px;text-align:center;">1. Incoming Payment</div>
-    <div style="color:#1d9e75;font-weight:bold;text-align:center;">&rarr;</div>
-    <div style="background:#ffffff;border:1px solid #cbd5e1;padding:10px 15px;border-radius:4px;font-size:13px;flex:1;min-width:180px;text-align:center;">2. Register Liability</div>
-    <div style="color:#1d9e75;font-weight:bold;text-align:center;">&rarr;</div>
-    <div style="background:#ffffff;border:1px solid #cbd5e1;padding:10px 15px;border-radius:4px;font-size:13px;flex:1;min-width:180px;text-align:center;">3. Apply on Invoice</div>
+    <!-- Section 5 -->
+    <h2>5. Retention Release Lifecycle</h2>
+    <div
+      style="
+        background: #f6f3fb;
+        border-left: 4px solid #6650a1;
+        padding: 15px;
+        border-radius: 0 6px 6px 0;
+        margin-bottom: 15px;
+      "
+    >
+      <strong style="color: #392c69">State Flow:</strong> Held (Retention Asset)
+      &rarr; Released (Customer Receivable) &rarr; Collected Later (Receive
+      &amp; Reconcile Payment)
+    </div>
+    <p>
+      Posting a release debits Accounts Receivable and credits the Retention
+      account. This makes held money collectible in receivables without
+      generating bank cash directly.
+    </p>
+
+    <!-- Section 6 -->
+    <h2>6. Bank Reconciliation Process</h2>
+    <div class="flow-container">
+      <div class="flow-step">
+        <div class="flow-num">A</div>
+        <div>
+          <strong>Create Bank Receipt:</strong> Confirm actual receipt, choose
+          date/journal/reference to create draft receipt.
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">B</div>
+        <div>
+          <strong>Review &amp; Post:</strong> Validate receipt entries and
+          return to the Reconcile Payment wizard.
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">C</div>
+        <div>
+          <strong>Match Credit:</strong> Select eligible posted Outstanding
+          Receipts credit and confirm full match.
+        </div>
+      </div>
+    </div>
+
+    <div class="warning-box">
+      <strong>Manual Reconciliation Limits:</strong> Company-currency payments
+      only; equal full residual amounts; matching customer, company, account,
+      and currency; posted two-line bank receipt required.
+    </div>
+
+    <!-- Section 7 & 8 -->
+    <h2>7 &amp; 8. Reporting, Audit &amp; Controls</h2>
+    <div
+      style="
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        margin-bottom: 30px;
+      "
+    >
+      <div
+        style="
+          background: #f8fafc;
+          padding: 20px;
+          border-radius: 6px;
+          border: 1px solid #e2e8f0;
+        "
+      >
+        <h4 style="color: #392c69; margin-top: 0">Reporting Capabilities</h4>
+        <ul style="margin: 0; padding-left: 18px; font-size: 14px; color: #444">
+          <li>Dynamic Date, Company, Customer &amp; Project filters.</li>
+          <li>Drill-downs into Invoices, Advances, and Movements.</li>
+          <li>Print &amp; PDF export with A4 landscape support.</li>
+          <li>Excel multi-sheet export (Summary &amp; Source transactions).</li>
+        </ul>
+      </div>
+      <div
+        style="
+          background: #f8fafc;
+          padding: 20px;
+          border-radius: 6px;
+          border: 1px solid #e2e8f0;
+        "
+      >
+        <h4 style="color: #392c69; margin-top: 0">Control &amp; Audit Trail</h4>
+        <ul style="margin: 0; padding-left: 18px; font-size: 14px; color: #444">
+          <li>Registered advances &amp; movement records are immutable.</li>
+          <li>Automatic duplicate detection during receipt creation.</li>
+          <li>Reconciliation revalidated under standard Odoo locks.</li>
+          <li>Full audit trail connecting corrections to journal entries.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Footer CTA -->
+    <div
+      style="
+        background: #392c69;
+        padding: 30px;
+        border-radius: 8px;
+        text-align: center;
+        color: #ffffff;
+        margin-top: 40px;
+      "
+    >
+      <h2
+        style="
+          color: #ffffff;
+          font-size: 22px;
+          margin: 0 0 10px;
+          border: none;
+          padding: 0;
+        "
+      >
+        Your Workflow. Your Odoo. Let&rsquo;s Connect.
+      </h2>
+      <p style="color: #ece7f9; font-size: 14px; margin: 0 0 18px">
+        Need Odoo customization, a new feature, or integration with another
+        system? Let&rsquo;s discuss a tailored solution.
+      </p>
+      <a
+        href="mailto:sarusarang02@gmail.com?subject=Odoo%20Customization%20%26%20Integration%20Enquiry"
+        style="
+          color: #392c69;
+          background: #ffffff;
+          padding: 12px 24px;
+          border-radius: 4px;
+          text-decoration: none;
+          display: inline-block;
+          font-weight: bold;
+          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        "
+        >sarusarang02@gmail.com</a
+      >
+    </div>
+
+    <p
+      style="
+        margin-top: 25px;
+        font-size: 12px;
+        color: #777777;
+        text-align: center;
+      "
+    >
+      Module: <strong>contract_retention_advance</strong> &middot; Dependencies:
+      Accounting and Sales
+    </p>
   </div>
 </div>
 
-<!-- Section 4 -->
-<h2 style="color:#392c69;font-size:20px;margin:35px 0 10px;padding-left:10px;border-left:4px solid #1d9e75;">4. Invoice breakdown</h2>
-<p style="margin-bottom:10px;">Retention and percentage recovery are calculated on eligible untaxed invoice-line subtotals. The gross invoice and tax remain unchanged; contract transfers reclassify the receivable.</p>
-<p style="color:#666666;font-size:13px;margin-bottom:15px;">Example only: untaxed work 10,000 SAR, tax 1,500 SAR, retention 10%, recovery 20%. Gross invoice: <strong>11,500 SAR</strong>.</p>
-<div style="overflow-x:auto;">
-<table style="width:100%;border-collapse:collapse;margin-bottom:20px;">
-<thead>
-  <tr style="background-color:#ede8f7;text-align:left;">
-    <th style="padding:10px;border:1px solid #ddd;">Item</th>
-    <th style="padding:10px;border:1px solid #ddd;">Calculation</th>
-    <th style="padding:10px;border:1px solid #ddd;">Amount</th>
-  </tr>
-</thead>
-<tbody>
-  <tr>
-    <td style="padding:10px;border:1px solid #ddd;">Retention deduction (held)</td>
-    <td style="padding:10px;border:1px solid #ddd;">10,000 &times; 10%</td>
-    <td style="padding:10px;border:1px solid #ddd;"><strong>1,000 SAR</strong></td>
-  </tr>
-  <tr style="background-color:#fcfcfc;">
-    <td style="padding:10px;border:1px solid #ddd;">Advance recovery</td>
-    <td style="padding:10px;border:1px solid #ddd;">10,000 &times; 20%</td>
-    <td style="padding:10px;border:1px solid #ddd;"><strong>2,000 SAR</strong></td>
-  </tr>
-  <tr>
-    <td style="padding:10px;border:1px solid #ddd;">Immediate payable before cash</td>
-    <td style="padding:10px;border:1px solid #ddd;">11,500 &minus; 1,000 &minus; 2,000</td>
-    <td style="padding:10px;border:1px solid #ddd;"><strong>8,500 SAR</strong></td>
-  </tr>
-</tbody>
-</table>
-</div>
-<p style="font-size:13px;color:#666666;margin-bottom:20px;">Payable before cash is not the current unpaid residual. Actual cash receipts and reconciliations affect Odoo&rsquo;s Amount Due separately.</p>
-
-<!-- Section 5 -->
-<h2 style="color:#392c69;font-size:20px;margin:35px 0 10px;padding-left:10px;border-left:4px solid #1d9e75;">5. Retention release</h2>
-<p style="margin-bottom:15px;">Use Contract Retention &rarr; Release Retention to select eligible items, review the amount, and post the release. A release cannot exceed the eligible remaining balance. <strong>Release makes held money collectible. It does not receive cash.</strong></p>
-<div style="background-color:#f6f3fb;border-left:4px solid #6650a1;padding:12px 16px;margin-bottom:15px;border-radius:0 4px 4px 0;">
-<strong>Held</strong> (retention asset) &rarr; <strong>Released</strong> (customer receivable) &rarr; <strong>Collected later</strong> (receive and reconcile a payment)
-</div>
-<p style="margin-bottom:20px;"><strong>What posting a release changes:</strong> debit Accounts Receivable and credit the Retention account. The held balance reduces and the amount becomes collectible in receivables. No bank cash is created by this action.</p>
-
-<!-- Section 6 -->
-<h2 style="color:#392c69;font-size:20px;margin:35px 0 10px;padding-left:10px;border-left:4px solid #1d9e75;">6. Bank reconciliation</h2>
-<p style="margin-bottom:15px;">&ldquo;Remaining advance = 0&rdquo; is not &ldquo;Payment = Paid&rdquo;. Advance recovery settles the contract allocation. The payment&rsquo;s Outstanding Receipts line still needs its bank counterpart.</p>
-<div style="overflow-x:auto;">
-<table style="width:100%;border-collapse:collapse;margin-bottom:20px;">
-<thead>
-  <tr style="background-color:#ede8f7;text-align:left;">
-    <th style="padding:10px;border:1px solid #ddd;">Accounting event</th>
-    <th style="padding:10px;border:1px solid #ddd;">Debit</th>
-    <th style="padding:10px;border:1px solid #ddd;">Credit</th>
-  </tr>
-</thead>
-<tbody>
-  <tr>
-    <td style="padding:10px;border:1px solid #ddd;">Incoming customer payment</td>
-    <td style="padding:10px;border:1px solid #ddd;">Outstanding Receipts</td>
-    <td style="padding:10px;border:1px solid #ddd;">Accounts Receivable</td>
-  </tr>
-  <tr style="background-color:#fcfcfc;">
-    <td style="padding:10px;border:1px solid #ddd;">Advance registration</td>
-    <td style="padding:10px;border:1px solid #ddd;">Accounts Receivable</td>
-    <td style="padding:10px;border:1px solid #ddd;">Customer Advance Liability</td>
-  </tr>
-  <tr>
-    <td style="padding:10px;border:1px solid #ddd;">Actual bank receipt</td>
-    <td style="padding:10px;border:1px solid #ddd;">Bank</td>
-    <td style="padding:10px;border:1px solid #ddd;">Outstanding Receipts</td>
-  </tr>
-</tbody>
-</table>
-</div>
-
-<div style="background-color:#e9f6f0;border:1px solid #cfe8dc;padding:15px;border-radius:6px;color:#174b38;margin-bottom:20px;">
-<strong>From the Customer Contract Advances form:</strong><br/>
-Create Bank Receipt &rarr; confirm actual receipt, choose date/journal/reference &rarr; create a draft &rarr; review and post &rarr; return to Reconcile Payment &rarr; select the eligible posted Outstanding Receipts credit &rarr; confirm the full match.
-<br/><br/>The Create Bank Receipt button hides once a linked receipt exists. After full bank settlement, Reconcile Payment hides and a Reconciled flag appears. Odoo computes the payment status; the module never forces Paid.
-</div>
-
-<div style="background-color:#fff4d2;border-left:4px solid #e6bd45;padding:12px 16px;margin-bottom:20px;border-radius:0 4px 4px 0;">
-<strong>Manual reconciliation limits:</strong> company-currency payments only; equal full residual amounts; matching customer, company, account and currency; a posted two-line bank receipt. Draft, cancelled, partially matched or protected contract-transfer entries are not eligible. This wizard does not perform write-offs or FX settlement. If a receipt is missing, verify actual bank evidence before creating anything; do not duplicate a receipt merely to change payment status.
-</div>
-
-<!-- Section 7 -->
-<h2 style="color:#392c69;font-size:20px;margin:35px 0 10px;padding-left:10px;border-left:4px solid #1d9e75;">7. Reporting</h2>
-<p style="margin-bottom:10px;">Open Contract Retention &amp; Advance Report. Use Date From, Date To, Company, Customer and Project; click Get Report to generate the table. The report shows gross invoiced, net held, released, advance received, recovered and remaining advance, with Invoices, Advances and Movements drill-downs.</p>
-<ul style="margin:5px 0 20px 20px;padding:0;">
-  <li><strong>Report scope:</strong> posted transactions within the inclusive date range. Opening balances before Date From are excluded; remaining figures are net period amounts, not closing balances.</li>
-  <li><strong>Editing filters:</strong> existing rows remain visible until Get Report is clicked again.</li>
-  <li><strong>Print:</strong> opens the browser print dialog through a hidden frame, without navigating to a new tab. The template specifies A4 landscape; browser settings can override orientation.</li>
-  <li><strong>PDF:</strong> uses the same landscape template and generated report rows. A working Odoo PDF renderer is required.</li>
-  <li><strong>Print/PDF subtotals:</strong> bold, separated by company and transaction currency. No mixed-currency grand total.</li>
-  <li><strong>Excel:</strong> Summary, Source transactions and Method sheets; filter-details rows are omitted and subtotals are bold. Export calculations use the selected filters at export time.</li>
-</ul>
-
-<!-- Section 8 -->
-<h2 style="color:#392c69;font-size:20px;margin:35px 0 10px;padding-left:10px;border-left:4px solid #1d9e75;">8. Control &amp; audit</h2>
-<p style="margin-bottom:10px;">The module uses posted journal entries and movement records to explain the balances.</p>
-<ul style="margin:5px 0 25px 20px;padding:0;">
-  <li>Accountant checks and standard Odoo access controls apply to accounting actions.</li>
-  <li>Registered advances cannot be casually reassigned or edited; protected movement records are immutable.</li>
-  <li>Recovery is validated against the available advance; matching company/customer/currency/project is required.</li>
-  <li>Receipt creation checks for possible duplicates and creates a draft rather than silently posting cash.</li>
-  <li>Reconciliation is revalidated under locks and uses standard Odoo reconciliation without elevated access.</li>
-  <li>Corrections and release history remain connected to their accounting movements.</li>
-</ul>
-
-<!-- Footer Call to Action -->
-<div style="background-color:#392c69;padding:30px;border-radius:6px;text-align:center;margin-top:40px;color:#ffffff;">
-<h2 style="color:#ffffff;font-size:22px;margin:0 0 10px;">Your workflow. Your Odoo. Let&rsquo;s connect.</h2>
-<p style="color:#ece7f9;font-size:14px;margin:0 0 15px;">Need Odoo customization, a new feature, or integration with another system? Share what you want to achieve and let&rsquo;s discuss a solution tailored to your business.</p>
-<a href="mailto:sarusarang02@gmail.com?subject=Odoo%20Customization%20%26%20Integration%20Enquiry" style="color:#392c69;background:#ffffff;padding:10px 20px;border-radius:4px;text-decoration:none;display:inline-block;font-weight:bold;">sarusarang02@gmail.com</a>
-</div>
-
-<p style="margin-top:25px;font-size:12px;color:#777777;text-align:center;">Module: <strong>contract_retention_advance</strong> &middot; Dependencies: Accounting and Sales &middot; Examples are illustrative, not live customer records.</p>
-
-</div>
-</section>
