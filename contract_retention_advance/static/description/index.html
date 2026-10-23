@@ -1,3 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Contract Retention & Advance Recovery - Odoo 19</title>
+<!-- Mermaid.js CDN for diagrams -->
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script>
+  mermaid.initialize({ startOnLoad: true, theme: 'neutral' });
+</script>
+</head>
+<body>
 <section style="padding:30px 0;font-family:Arial,Helvetica,sans-serif;color:#333333;line-height:1.7">
 <div style="max-width:960px;margin:0 auto;padding:0 20px">
 
@@ -45,9 +57,21 @@
 <tr><td><strong>3. Apply to invoices</strong></td><td>On a progress invoice, select the registered advance. Choose a percentage of eligible untaxed work or a fixed recovery amount.</td></tr>
 <tr><td><strong>4. Review availability</strong></td><td>Posting transfers the recovered amount out of the advance liability. Recovered increases; remaining advance decreases.</td></tr>
 </tbody></table>
-<div style="background-color:#e9f6f0;border:1px solid #cfe8dc;padding:16px;border-radius:6px;color:#174b38">
+<div style="background-color:#e9f6f0;border:1px solid #cfe8dc;padding:16px;border-radius:6px;color:#174b38;margin-top:16px">
 <strong>Example: advance of 6,000 SAR</strong> &mdash; Recovered 2,000 SAR, still available 4,000 SAR.<br/>
 Further invoices can use the remaining advance. Recovery cannot exceed the available advance or eligible untaxed work. Customer, company, currency and project must match the invoice.
+</div>
+
+<!-- Visual Flow: Advance Receipt & Recovery -->
+<div style="background-color:#f8f9fa;border:1px solid #e9ecef;padding:20px;border-radius:6px;margin:20px 0;">
+  <h4 style="color:#392c69;margin-top:0;font-size:16px;">Visual Flow: Advance Receipt &amp; Recovery</h4>
+  <div class="mermaid">
+    graph TD
+        A[Incoming Customer Payment] -->|Register Advance Liability| B(Customer Advance Liability Account)
+        B -->|Apply on Progress Invoice| C{Check Available Advance}
+        C -->|Valid| D[Recovered Amount Reduces Liability]
+        C -->|Exceeds Limit| E[Blocked / Error Validation]
+  </div>
 </div>
 
 <h2 style="color:#392c69;font-size:24px;margin:40px 0 8px;padding-left:12px;border-left:5px solid #1d9e75">4. Invoice breakdown</h2>
@@ -67,6 +91,16 @@ Further invoices can use the remaining advance. Recovery cannot exceed the avail
 <p style="background-color:#f6f3fb;border-left:4px solid #6650a1;padding:12px 16px"><strong>Held</strong> (retention asset) &rarr; <strong>Released</strong> (customer receivable) &rarr; <strong>Collected later</strong> (receive and reconcile a payment)</p>
 <p><strong>What posting a release changes:</strong> debit Accounts Receivable and credit the Retention account. The held balance reduces and the amount becomes collectible in receivables. No bank cash is created by this action.</p>
 
+<!-- Visual Flow: Retention Lifecycle -->
+<div style="background-color:#f8f9fa;border:1px solid #e9ecef;padding:20px;border-radius:6px;margin:20px 0;">
+  <h4 style="color:#392c69;margin-top:0;font-size:16px;">Visual Flow: Retention Lifecycle</h4>
+  <div class="mermaid">
+    graph LR
+        A[Held: Retention Asset] -->|Release Retention Action| B[Released: Customer Receivable]
+        B -->|Receive & Reconcile Payment| C[Collected / Paid]
+  </div>
+</div>
+
 <h2 style="color:#392c69;font-size:24px;margin:40px 0 8px;padding-left:12px;border-left:5px solid #1d9e75">6. Bank reconciliation</h2>
 <p>&ldquo;Remaining advance = 0&rdquo; is not &ldquo;Payment = Paid&rdquo;. Advance recovery settles the contract allocation. The payment&rsquo;s Outstanding Receipts line still needs its bank counterpart.</p>
 <table class="table table-bordered table-hover" style="width:100%">
@@ -76,11 +110,23 @@ Further invoices can use the remaining advance. Recovery cannot exceed the avail
 <tr><td>Advance registration</td><td>Accounts Receivable</td><td>Customer Advance Liability</td></tr>
 <tr><td>Actual bank receipt</td><td>Bank</td><td>Outstanding Receipts</td></tr>
 </tbody></table>
-<div style="background-color:#e9f6f0;border:1px solid #cfe8dc;padding:16px;border-radius:6px;color:#174b38">
+<div style="background-color:#e9f6f0;border:1px solid #cfe8dc;padding:16px;border-radius:6px;color:#174b38;margin-top:16px">
 <strong>From the Customer Contract Advances form:</strong><br/>
 Create Bank Receipt &rarr; confirm actual receipt, choose date/journal/reference &rarr; create a draft &rarr; review and post &rarr; return to Reconcile Payment &rarr; select the eligible posted Outstanding Receipts credit &rarr; confirm the full match.
 <br/><br/>The Create Bank Receipt button hides once a linked receipt exists. After full bank settlement, Reconcile Payment hides and a Reconciled flag appears. Odoo computes the payment status; the module never forces Paid.
 </div>
+
+<!-- Visual Flow: Bank Reconciliation Process -->
+<div style="background-color:#f8f9fa;border:1px solid #e9ecef;padding:20px;border-radius:6px;margin:20px 0;">
+  <h4 style="color:#392c69;margin-top:0;font-size:16px;">Visual Flow: Bank Reconciliation Process</h4>
+  <div class="mermaid">
+    graph TD
+        A[Create Bank Receipt] -->|Draft Receipt| B[Review & Post]
+        B -->|Reconcile Payment Wizard| C[Match Outstanding Receipts Credit]
+        C -->|Complete Match| D[Reconciled Flag Active]
+  </div>
+</div>
+
 <p style="background-color:#fff4d2;border-left:4px solid #e6bd45;padding:12px 16px;margin-top:16px"><strong>Manual reconciliation limits:</strong> company-currency payments only; equal full residual amounts; matching customer, company, account and currency; a posted two-line bank receipt. Draft, cancelled, partially matched or protected contract-transfer entries are not eligible. This wizard does not perform write-offs or FX settlement. If a receipt is missing, verify actual bank evidence before creating anything; do not duplicate a receipt merely to change payment status.</p>
 
 <h2 style="color:#392c69;font-size:24px;margin:40px 0 8px;padding-left:12px;border-left:5px solid #1d9e75">7. Reporting</h2>
@@ -108,10 +154,12 @@ Create Bank Receipt &rarr; confirm actual receipt, choose date/journal/reference
 <div style="background-color:#392c69;padding:30px;border-radius:6px;text-align:center;margin-top:40px">
 <h2 style="color:#ffffff;font-size:26px;margin:0 0 12px">Your workflow. Your Odoo. Let&rsquo;s connect.</h2>
 <p style="color:#ece7f9;margin:0 0 18px">Need Odoo customization, a new feature, or integration with another system? Share what you want to achieve and let&rsquo;s discuss a solution tailored to your business.</p>
-<a class="btn btn-light btn-lg" href="mailto:sarusarang02@gmail.com?subject=Odoo%20Customization%20%26%20Integration%20Enquiry"><strong>sarusarang02@gmail.com</strong></a>
+<a class="btn btn-light btn-lg" href="mailto:sarusarang02@gmail.com?subject=Odoo%20Customization%20%26%20Integration%20Enquiry" style="color:#392c69;background:#ffffff;padding:10px 20px;border-radius:4px;text-decoration:none;display:inline-block"><strong>sarusarang02@gmail.com</strong></a>
 </div>
 
 <p style="margin-top:25px;font-size:13px;color:#777777">Module: <strong>contract_retention_advance</strong> &middot; Dependencies: Accounting and Sales &middot; Examples are illustrative, not live customer records. Configure accounts and review journal entries with your accountant before production use.</p>
 
 </div>
 </section>
+</body>
+</html>
