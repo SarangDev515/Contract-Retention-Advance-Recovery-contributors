@@ -1,981 +1,265 @@
-<div
-  class="odoo-app-description"
-  style="
-    font-family:
-      &quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;
-    color: #333333;
-    line-height: 1.6;
-    max-width: 960px;
-    margin: 0 auto;
-    background-color: #ffffff;
-    padding: 10px;
-  "
->
-  <style>
-    .odoo-app-description .hover-card {
-      transition: all 0.3s ease-in-out !important;
-      cursor: pointer;
-    }
-    .odoo-app-description .hover-card:hover {
-      transform: translateY(-5px) !important;
-      box-shadow: 0 8px 20px rgba(57, 44, 105, 0.15) !important;
-      border-color: #1d9e75 !important;
-    }
-    .odoo-app-description .hover-row {
-      transition: background-color 0.2s ease !important;
-    }
-    .odoo-app-description .hover-row:hover {
-      background-color: #f0fdf4 !important;
-    }
-    .odoo-app-description .btn-contact {
-      transition: all 0.3s ease !important;
-    }
-    .odoo-app-description .btn-contact:hover {
-      background-color: #1d9e75 !important;
-      color: #ffffff !important;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
-    }
-  </style>
 
-  <!-- Header Banner -->
-  <table
-    width="100%"
-    cellpadding="0"
-    cellspacing="0"
-    border="0"
-    style="
-      background: linear-gradient(135deg, #392c69 0%, #4c3b88 100%);
-      border-radius: 8px;
-      margin-bottom: 30px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    "
-  >
+<div style="font-family:Arial,Helvetica,sans-serif;color:#273449;line-height:1.65;max-width:1100px;margin:0 auto;background:#ffffff;padding:0;font-size:14px;">
+
+  <!-- HERO -->
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate;background:#252044;border-radius:12px;margin:0 0 26px 0;">
     <tr>
-      <td style="padding: 35px 25px; text-align: center">
-        <h1
-          style="
-            color: #ffffff;
-            font-size: 28px;
-            margin: 0 0 10px;
-            font-weight: bold;
-          "
-        >
-          Contract Retention &amp; Advance Recovery
-        </h1>
-        <p style="color: #ece7f9; font-size: 15px; margin: 0 0 15px">
-          Odoo 19 &middot; Accounting + Sales
-        </p>
-        <p
-          style="
-            color: #ffffff;
-            font-size: 15px;
-            margin: 0;
-            line-height: 1.5;
-            max-width: 800px;
-            display: inline-block;
-          "
-        >
-          Track money received before work, apply it across progress invoices,
-          hold contractual retention, and release it when collectible.
-        </p>
+      <td style="padding:38px 30px 34px 30px;text-align:left;">
+        <p style="margin:0 0 10px 0;color:#c8c1f2;font-size:12px;font-weight:bold;letter-spacing:1.5px;text-transform:uppercase;">ODOO 19 · ACCOUNTING &amp; SALES</p>
+        <h1 style="margin:0 0 14px 0;color:#ffffff;font-size:30px;line-height:1.2;font-weight:700;">Contract Retention &amp; Advance Recovery</h1>
+        <p style="margin:0 0 22px 0;color:#e9e7f5;font-size:16px;line-height:1.7;">Manage customer advances, recover them across progress invoices, track contractual retention, and release retained amounts when they become collectible.</p>
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+          <tr>
+            <td style="background:#ffffff;border-radius:6px;padding:9px 13px;color:#252044;font-size:12px;font-weight:bold;">Odoo 19</td>
+            <td width="8"></td>
+            <td style="background:#39335d;border:1px solid #5b527f;border-radius:6px;padding:9px 13px;color:#ffffff;font-size:12px;font-weight:bold;">Accounting</td>
+            <td width="8"></td>
+            <td style="background:#39335d;border:1px solid #5b527f;border-radius:6px;padding:9px 13px;color:#ffffff;font-size:12px;font-weight:bold;">Sales</td>
+          </tr>
+        </table>
       </td>
     </tr>
   </table>
 
-  <!-- Section 1 -->
-  <h2
-    style="
-      color: #392c69;
-      font-size: 20px;
-      margin: 35px 0 15px;
-      padding-left: 12px;
-      border-left: 5px solid #1d9e75;
-    "
-  >
-    1. Three Balances, Three Different Questions
-  </h2>
-  <p style="margin-bottom: 15px">
-    This module separates contract accounting from cash settlement. Hover over
-    each card below to inspect its purpose:
-  </p>
+  <!-- VALUE PROPOSITION -->
+  <h2 style="margin:0 0 10px 0;color:#252044;font-size:23px;line-height:1.3;">Keep contract balances clear and traceable</h2>
+  <p style="margin:0 0 18px 0;color:#526176;">Contract work can involve money received before invoicing, deductions held as retention, and later settlement. This module keeps these movements distinct so your team can follow the balance, review the accounting impact, and trace activity back to its source records.</p>
 
-  <table
-    width="100%"
-    cellpadding="0"
-    cellspacing="0"
-    border="0"
-    style="margin-bottom: 30px"
-  >
+  <!-- FEATURE CARDS -->
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate;margin:0 0 28px 0;">
     <tr>
-      <td width="31%" style="vertical-align: top">
-        <div
-          class="hover-card"
-          style="
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            border-radius: 8px;
-            padding: 20px;
-            height: 100%;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
-          "
-        >
-          <div
-            style="
-              font-size: 12px;
-              font-weight: bold;
-              color: #1d9e75;
-              text-transform: uppercase;
-              margin-bottom: 6px;
-            "
-          >
-            Prepaid Funds
-          </div>
-          <h3 style="color: #392c69; font-size: 16px; margin: 0 0 10px">
-            Remaining Advance
-          </h3>
-          <p
-            style="
-              font-size: 13px;
-              color: #555;
-              margin: 0 0 12px;
-              line-height: 1.4;
-            "
-          >
-            How much prepaid money is still available for future progress
-            invoices.
-          </p>
-          <div
-            style="
-              font-size: 12px;
-              background: #f8fafc;
-              padding: 8px 10px;
-              border-radius: 4px;
-              border: 1px solid #f1f5f9;
-              color: #334155;
-            "
-          >
-            <strong>Reduced by:</strong> Posted advance recovery &amp;
-            corrections.
-          </div>
-        </div>
+      <td width="50%" valign="top" style="padding:16px;background:#f7f6fc;border:1px solid #e5e1f3;border-radius:8px;">
+        <p style="margin:0 0 7px 0;color:#5b4ab0;font-size:12px;font-weight:bold;text-transform:uppercase;">01 · Advance management</p>
+        <h3 style="margin:0 0 7px 0;color:#252044;font-size:16px;">Register and recover advances</h3>
+        <p style="margin:0;color:#526176;">Assign eligible customer payments as contract advances and apply a fixed amount or percentage to progress invoices.</p>
       </td>
-      <td width="3.5%"></td>
-      <td width="31%" style="vertical-align: top">
-        <div
-          class="hover-card"
-          style="
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            border-radius: 8px;
-            padding: 20px;
-            height: 100%;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
-          "
-        >
-          <div
-            style="
-              font-size: 12px;
-              font-weight: bold;
-              color: #6650a1;
-              text-transform: uppercase;
-              margin-bottom: 6px;
-            "
-          >
-            Contract Guarantee
-          </div>
-          <h3 style="color: #392c69; font-size: 16px; margin: 0 0 10px">
-            Remaining Retention
-          </h3>
-          <p
-            style="
-              font-size: 13px;
-              color: #555;
-              margin: 0 0 12px;
-              line-height: 1.4;
-            "
-          >
-            How much contractual retention is currently held back by the client.
-          </p>
-          <div
-            style="
-              font-size: 12px;
-              background: #f8fafc;
-              padding: 8px 10px;
-              border-radius: 4px;
-              border: 1px solid #f1f5f9;
-              color: #334155;
-            "
-          >
-            <strong>Reduced by:</strong> Posted release or retention
-            corrections.
-          </div>
-        </div>
+      <td width="14"></td>
+      <td width="50%" valign="top" style="padding:16px;background:#f2faf6;border:1px solid #d8eee3;border-radius:8px;">
+        <p style="margin:0 0 7px 0;color:#16815d;font-size:12px;font-weight:bold;text-transform:uppercase;">02 · Retention tracking</p>
+        <h3 style="margin:0 0 7px 0;color:#252044;font-size:16px;">Track amounts held back</h3>
+        <p style="margin:0;color:#526176;">Monitor contractual retention and release eligible amounts to customer receivables when they become collectible.</p>
       </td>
-      <td width="3.5%"></td>
-      <td width="31%" style="vertical-align: top">
-        <div
-          class="hover-card"
-          style="
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            border-radius: 8px;
-            padding: 20px;
-            height: 100%;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
-          "
-        >
-          <div
-            style="
-              font-size: 12px;
-              font-weight: bold;
-              color: #0284c7;
-              text-transform: uppercase;
-              margin-bottom: 6px;
-            "
-          >
-            Bank Settlement
-          </div>
-          <h3 style="color: #392c69; font-size: 16px; margin: 0 0 10px">
-            Outstanding Receipts
-          </h3>
-          <p
-            style="
-              font-size: 13px;
-              color: #555;
-              margin: 0 0 12px;
-              line-height: 1.4;
-            "
-          >
-            Whether incoming customer payment is matched to actual bank receipt
-            proof.
-          </p>
-          <div
-            style="
-              font-size: 12px;
-              background: #f8fafc;
-              padding: 8px 10px;
-              border-radius: 4px;
-              border: 1px solid #f1f5f9;
-              color: #334155;
-            "
-          >
-            <strong>Reduced by:</strong> Bank reconciliation process.
-          </div>
-        </div>
+    </tr>
+    <tr><td colspan="3" height="12"></td></tr>
+    <tr>
+      <td width="50%" valign="top" style="padding:16px;background:#f7f9fc;border:1px solid #e1e7ef;border-radius:8px;">
+        <p style="margin:0 0 7px 0;color:#3d638d;font-size:12px;font-weight:bold;text-transform:uppercase;">03 · Bank settlement</p>
+        <h3 style="margin:0 0 7px 0;color:#252044;font-size:16px;">Reconcile receipt evidence</h3>
+        <p style="margin:0;color:#526176;">Use the configured outstanding receipts account and match eligible posted entries to bank receipt records.</p>
+      </td>
+      <td width="14"></td>
+      <td width="50%" valign="top" style="padding:16px;background:#fff8ed;border:1px solid #f4e5c9;border-radius:8px;">
+        <p style="margin:0 0 7px 0;color:#a56b16;font-size:12px;font-weight:bold;text-transform:uppercase;">04 · Audit &amp; reporting</p>
+        <h3 style="margin:0 0 7px 0;color:#252044;font-size:16px;">Review every movement</h3>
+        <p style="margin:0;color:#526176;">Use filters, source-record drill-downs, and export options to review balances and maintain an audit trail.</p>
       </td>
     </tr>
   </table>
 
-  <!-- Section 2 -->
-  <h2
-    style="
-      color: #392c69;
-      font-size: 20px;
-      margin: 35px 0 15px;
-      padding-left: 12px;
-      border-left: 5px solid #1d9e75;
-    "
-  >
-    2. Configuration Setup
-  </h2>
-  <p style="margin-bottom: 15px">
-    Configured under Accounting Settings &rarr; Contract Retention and Advances
-    (Company-specific):
-  </p>
+  <!-- THREE BALANCES -->
+  <h2 style="margin:0 0 8px 0;color:#252044;font-size:21px;border-top:1px solid #e5e7eb;padding-top:24px;">Three balances. Three different questions.</h2>
+  <p style="margin:0 0 15px 0;color:#526176;">The module separates contract accounting balances from bank settlement status.</p>
 
-  <table
-    width="100%"
-    cellpadding="0"
-    cellspacing="0"
-    border="0"
-    style="margin-bottom: 30px"
-  >
+  <table width="100%" cellpadding="11" cellspacing="0" border="0" style="border-collapse:collapse;border:1px solid #e1e5ec;margin:0 0 26px 0;">
+    <tr style="background:#f1effa;">
+      <th align="left" style="border:1px solid #e1e5ec;color:#252044;">Balance</th>
+      <th align="left" style="border:1px solid #e1e5ec;color:#252044;">What it tells you</th>
+      <th align="left" style="border:1px solid #e1e5ec;color:#252044;">What changes it</th>
+    </tr>
     <tr>
-      <td width="48%" style="vertical-align: top">
-        <div
-          class="hover-card"
-          style="
-            background: #f8fafc;
-            border: 1px solid #cbd5e1;
-            border-radius: 6px;
-            padding: 22px;
-          "
-        >
-          <h3
-            style="
-              color: #392c69;
-              margin-top: 0;
-              font-size: 16px;
-              border-bottom: 2px solid #ede8f7;
-              padding-bottom: 8px;
-            "
-          >
-            Contract Transfer Accounts
-          </h3>
-          <ul
-            style="
-              margin: 12px 0 0 0;
-              padding-left: 18px;
-              font-size: 14px;
-              color: #444;
-            "
-          >
-            <li style="margin-bottom: 8px">Enable contract accounting.</li>
-            <li style="margin-bottom: 8px">
-              Reconcilable current-asset account for retention.
-            </li>
-            <li style="margin-bottom: 8px">
-              Reconcilable current-liability account for advances.
-            </li>
-            <li>Miscellaneous journal for contract transfers.</li>
-          </ul>
-        </div>
+      <td style="border:1px solid #e1e5ec;"><strong>Remaining Advance</strong></td>
+      <td style="border:1px solid #e1e5ec;">Prepaid money still available for future progress invoices.</td>
+      <td style="border:1px solid #e1e5ec;">Posted advance recovery and corrections.</td>
+    </tr>
+    <tr style="background:#fbfcfe;">
+      <td style="border:1px solid #e1e5ec;"><strong>Remaining Retention</strong></td>
+      <td style="border:1px solid #e1e5ec;">Contractual retention currently held back.</td>
+      <td style="border:1px solid #e1e5ec;">Posted retention releases and corrections.</td>
+    </tr>
+    <tr>
+      <td style="border:1px solid #e1e5ec;"><strong>Outstanding Receipts</strong></td>
+      <td style="border:1px solid #e1e5ec;">Incoming customer payments awaiting matching with bank receipt evidence.</td>
+      <td style="border:1px solid #e1e5ec;">Bank reconciliation.</td>
+    </tr>
+  </table>
+
+  <!-- ADVANCE WORKFLOW -->
+  <h2 style="margin:0 0 8px 0;color:#252044;font-size:21px;border-top:1px solid #e5e7eb;padding-top:24px;">Advance recovery workflow</h2>
+  <p style="margin:0 0 15px 0;color:#526176;">Follow the process from customer payment through invoice recovery.</p>
+
+  <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;margin:0 0 16px 0;">
+    <tr>
+      <td width="52" valign="top" style="padding:14px 10px;border:1px solid #e1e5ec;background:#252044;color:#ffffff;text-align:center;font-size:17px;font-weight:bold;">1</td>
+      <td valign="top" style="padding:13px 15px;border:1px solid #e1e5ec;">
+        <strong style="color:#252044;">Confirm the customer payment</strong>
+        <p style="margin:3px 0 0 0;color:#526176;">Create and post the incoming customer payment, with the receivable credit available for assignment.</p>
       </td>
-      <td width="4%"></td>
-      <td width="48%" style="vertical-align: top">
-        <div
-          class="hover-card"
-          style="
-            background: #f8fafc;
-            border: 1px solid #cbd5e1;
-            border-radius: 6px;
-            padding: 22px;
-          "
-        >
-          <h3
-            style="
-              color: #392c69;
-              margin-top: 0;
-              font-size: 16px;
-              border-bottom: 2px solid #ede8f7;
-              padding-bottom: 8px;
-            "
-          >
-            Bank Settlement Accounts
-          </h3>
-          <ul
-            style="
-              margin: 12px 0 0 0;
-              padding-left: 18px;
-              font-size: 14px;
-              color: #444;
-            "
-          >
-            <li style="margin-bottom: 8px">
-              Configure payment journal&rsquo;s actual Bank account.
-            </li>
-            <li style="margin-bottom: 8px">
-              Separate reconcilable Outstanding Receipts account.
-            </li>
-            <li style="margin-bottom: 8px">
-              Perform accounting actions with required accountant access.
-            </li>
-            <li>Confirm company, customer, currency and project.</li>
-          </ul>
-        </div>
+    </tr>
+    <tr>
+      <td valign="top" style="padding:14px 10px;border:1px solid #e1e5ec;background:#39335d;color:#ffffff;text-align:center;font-size:17px;font-weight:bold;">2</td>
+      <td valign="top" style="padding:13px 15px;border:1px solid #e1e5ec;">
+        <strong style="color:#252044;">Assign and register the advance</strong>
+        <p style="margin:3px 0 0 0;color:#526176;">Use <em>Assign Contract Advance</em> to register the advance liability. The registered assignment is immutable.</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" style="padding:14px 10px;border:1px solid #e1e5ec;background:#51467d;color:#ffffff;text-align:center;font-size:17px;font-weight:bold;">3</td>
+      <td valign="top" style="padding:13px 15px;border:1px solid #e1e5ec;">
+        <strong style="color:#252044;">Apply the advance to a progress invoice</strong>
+        <p style="margin:3px 0 0 0;color:#526176;">Select a registered advance and specify the recovery percentage or fixed amount.</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" style="padding:14px 10px;border:1px solid #e1e5ec;background:#16815d;color:#ffffff;text-align:center;font-size:17px;font-weight:bold;">4</td>
+      <td valign="top" style="padding:13px 15px;border:1px solid #e1e5ec;">
+        <strong style="color:#252044;">Post and review the remaining balance</strong>
+        <p style="margin:3px 0 0 0;color:#526176;">Posting transfers the recovered amount out of the advance liability and reduces the remaining available advance.</p>
       </td>
     </tr>
   </table>
 
-  <!-- Section 3 -->
-  <h2
-    style="
-      color: #392c69;
-      font-size: 20px;
-      margin: 35px 0 15px;
-      padding-left: 12px;
-      border-left: 5px solid #1d9e75;
-    "
-  >
-    3. Advance Recovery Workflow
-  </h2>
-  <p style="margin-bottom: 15px">
-    Follow this diagrammatic step-by-step sequence to process advance recovery:
-  </p>
+  <!-- ADVANCE EXAMPLE -->
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate;background:#eff9f4;border:1px solid #cfe9dc;border-radius:8px;margin:0 0 27px 0;">
+    <tr><td style="padding:16px 18px;color:#205a43;">
+      <p style="margin:0 0 5px 0;font-size:12px;font-weight:bold;text-transform:uppercase;">Example · Advance balance</p>
+      <p style="margin:0;">Initial advance: <strong>6,000 SAR</strong> &nbsp; | &nbsp; Recovered: <strong>2,000 SAR</strong> &nbsp; | &nbsp; Remaining: <strong>4,000 SAR</strong></p>
+      <p style="margin:7px 0 0 0;font-size:13px;">Recovery is limited to the available advance and eligible untaxed work.</p>
+    </td></tr>
+  </table>
 
-  <table
-    width="100%"
-    cellpadding="0"
-    cellspacing="0"
-    border="0"
-    style="margin-bottom: 20px"
-  >
-    <tr
-      class="hover-row"
-      style="background: #ffffff; border: 1px solid #e2e8f0"
-    >
-      <td
-        style="
-          padding: 15px;
-          border: 1px solid #cbd5e1;
-          border-radius: 6px 0 0 6px;
-          width: 50px;
-          text-align: center;
-          background: #392c69;
-          color: #ffffff;
-          font-weight: bold;
-          font-size: 16px;
-        "
-      >
-        1
-      </td>
-      <td
-        style="
-          padding: 15px;
-          border: 1px solid #cbd5e1;
-          border-left: none;
-          border-radius: 0 6px 6px 0;
-          font-size: 14px;
-        "
-      >
-        <strong>Confirm Payment:</strong> Create an incoming customer payment
-        with a posted journal entry. Its receivable credit must be entirely
-        unmatched for registration.
-      </td>
+  <!-- CALCULATION -->
+  <h2 style="margin:0 0 8px 0;color:#252044;font-size:21px;border-top:1px solid #e5e7eb;padding-top:24px;">Invoice calculation example</h2>
+  <p style="margin:0 0 15px 0;color:#526176;">Illustrative values: untaxed work 10,000 SAR · tax 1,500 SAR · retention 10% · advance recovery 20% · gross invoice 11,500 SAR.</p>
+
+  <table width="100%" cellpadding="11" cellspacing="0" border="0" style="border-collapse:collapse;border:1px solid #e1e5ec;margin:0 0 27px 0;">
+    <tr style="background:#f1effa;">
+      <th align="left" style="border:1px solid #e1e5ec;color:#252044;">Item</th>
+      <th align="left" style="border:1px solid #e1e5ec;color:#252044;">Calculation</th>
+      <th align="right" style="border:1px solid #e1e5ec;color:#252044;">Amount</th>
     </tr>
     <tr>
-      <td height="8"></td>
+      <td style="border:1px solid #e1e5ec;">Retention held</td>
+      <td style="border:1px solid #e1e5ec;">10,000 × 10%</td>
+      <td align="right" style="border:1px solid #e1e5ec;">1,000 SAR</td>
     </tr>
-    <tr
-      class="hover-row"
-      style="background: #ffffff; border: 1px solid #e2e8f0"
-    >
-      <td
-        style="
-          padding: 15px;
-          border: 1px solid #cbd5e1;
-          border-radius: 6px 0 0 6px;
-          width: 50px;
-          text-align: center;
-          background: #392c69;
-          color: #ffffff;
-          font-weight: bold;
-          font-size: 16px;
-        "
-      >
-        2
-      </td>
-      <td
-        style="
-          padding: 15px;
-          border: 1px solid #cbd5e1;
-          border-left: none;
-          border-radius: 0 6px 6px 0;
-          font-size: 14px;
-        "
-      >
-        <strong>Assign &amp; Register:</strong> Click
-        <em>Assign Contract Advance</em>, check assignment, then
-        <em>Register Advance Liability</em>. The assignment becomes immutable.
-      </td>
+    <tr style="background:#fbfcfe;">
+      <td style="border:1px solid #e1e5ec;">Advance recovery</td>
+      <td style="border:1px solid #e1e5ec;">10,000 × 20%</td>
+      <td align="right" style="border:1px solid #e1e5ec;">2,000 SAR</td>
     </tr>
+    <tr style="background:#eff9f4;">
+      <td style="border:1px solid #cfe9dc;"><strong>Immediate payable before cash</strong></td>
+      <td style="border:1px solid #cfe9dc;">11,500 − 1,000 − 2,000</td>
+      <td align="right" style="border:1px solid #cfe9dc;color:#16815d;"><strong>8,500 SAR</strong></td>
+    </tr>
+  </table>
+
+  <!-- RETENTION RELEASE -->
+  <h2 style="margin:0 0 8px 0;color:#252044;font-size:21px;border-top:1px solid #e5e7eb;padding-top:24px;">Retention release lifecycle</h2>
+  <p style="margin:0 0 14px 0;color:#526176;">Retention moves from an amount held as an asset to a collectible customer receivable, then to cash when the customer pays and the receipt is reconciled.</p>
+
+  <table width="100%" cellpadding="10" cellspacing="0" border="0" style="border-collapse:separate;margin:0 0 13px 0;">
     <tr>
-      <td height="8"></td>
+      <td width="33%" align="center" style="background:#f1effa;border:1px solid #e1dcf2;border-radius:6px;padding:13px 8px;color:#39335d;font-weight:bold;">Held<br/><span style="font-size:12px;font-weight:normal;">Retention asset</span></td>
+      <td width="16" align="center" style="color:#8b91a0;font-size:20px;">→</td>
+      <td width="33%" align="center" style="background:#eef5fc;border:1px solid #dbe7f5;border-radius:6px;padding:13px 8px;color:#315c8a;font-weight:bold;">Released<br/><span style="font-size:12px;font-weight:normal;">Customer receivable</span></td>
+      <td width="16" align="center" style="color:#8b91a0;font-size:20px;">→</td>
+      <td width="33%" align="center" style="background:#eff9f4;border:1px solid #cfe9dc;border-radius:6px;padding:13px 8px;color:#16815d;font-weight:bold;">Collected<br/><span style="font-size:12px;font-weight:normal;">Receive &amp; reconcile</span></td>
     </tr>
-    <tr
-      class="hover-row"
-      style="background: #ffffff; border: 1px solid #e2e8f0"
-    >
-      <td
-        style="
-          padding: 15px;
-          border: 1px solid #cbd5e1;
-          border-radius: 6px 0 0 6px;
-          width: 50px;
-          text-align: center;
-          background: #392c69;
-          color: #ffffff;
-          font-weight: bold;
-          font-size: 16px;
-        "
-      >
-        3
-      </td>
-      <td
-        style="
-          padding: 15px;
-          border: 1px solid #cbd5e1;
-          border-left: none;
-          border-radius: 0 6px 6px 0;
-          font-size: 14px;
-        "
-      >
-        <strong>Apply to Invoices:</strong> On a progress invoice, select
-        registered advance. Choose a percentage of eligible untaxed work or a
-        fixed recovery amount.
-      </td>
-    </tr>
+  </table>
+  <p style="margin:0 0 27px 0;color:#526176;">Posting a release debits Accounts Receivable and credits the Retention account. The release makes the retained amount collectible; it does not create bank cash directly.</p>
+
+  <!-- CONFIGURATION -->
+  <h2 style="margin:0 0 8px 0;color:#252044;font-size:21px;border-top:1px solid #e5e7eb;padding-top:24px;">Configuration checklist</h2>
+  <p style="margin:0 0 15px 0;color:#526176;">Configure the module under <strong>Accounting Settings → Contract Retention and Advances</strong>. Settings are company-specific.</p>
+
+  <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate;margin:0 0 27px 0;">
     <tr>
-      <td height="8"></td>
-    </tr>
-    <tr
-      class="hover-row"
-      style="background: #ffffff; border: 1px solid #e2e8f0"
-    >
-      <td
-        style="
-          padding: 15px;
-          border: 1px solid #cbd5e1;
-          border-radius: 6px 0 0 6px;
-          width: 50px;
-          text-align: center;
-          background: #392c69;
-          color: #ffffff;
-          font-weight: bold;
-          font-size: 16px;
-        "
-      >
-        4
+      <td width="50%" valign="top" style="padding:16px;border:1px solid #e1e5ec;background:#f8f9fc;">
+        <h3 style="margin:0 0 9px 0;color:#252044;font-size:16px;">Contract transfer accounts</h3>
+        <ul style="margin:0;padding-left:19px;color:#526176;">
+          <li style="margin-bottom:6px;">Enable contract accounting.</li>
+          <li style="margin-bottom:6px;">Set a reconcilable current-asset account for retention.</li>
+          <li style="margin-bottom:6px;">Set a reconcilable current-liability account for advances.</li>
+          <li>Choose a miscellaneous journal for contract transfers.</li>
+        </ul>
       </td>
-      <td
-        style="
-          padding: 15px;
-          border: 1px solid #cbd5e1;
-          border-left: none;
-          border-radius: 0 6px 6px 0;
-          font-size: 14px;
-        "
-      >
-        <strong>Review Availability:</strong> Posting transfers recovered amount
-        out of liability. Recovered increases; remaining advance decreases.
+      <td width="14"></td>
+      <td width="50%" valign="top" style="padding:16px;border:1px solid #e1e5ec;background:#f8f9fc;">
+        <h3 style="margin:0 0 9px 0;color:#252044;font-size:16px;">Bank settlement accounts</h3>
+        <ul style="margin:0;padding-left:19px;color:#526176;">
+          <li style="margin-bottom:6px;">Configure the payment journal's actual Bank account.</li>
+          <li style="margin-bottom:6px;">Set a separate reconcilable Outstanding Receipts account.</li>
+          <li>Verify the company, customer, currency, and project.</li>
+        </ul>
       </td>
     </tr>
   </table>
 
-  <table
-    width="100%"
-    cellpadding="16"
-    cellspacing="0"
-    border="0"
-    style="
-      background-color: #e9f6f0;
-      border: 1px solid #cfe8dc;
-      border-left: 5px solid #1d9e75;
-      border-radius: 6px;
-      margin-bottom: 30px;
-    "
-  >
+  <!-- BANK RECONCILIATION -->
+  <h2 style="margin:0 0 8px 0;color:#252044;font-size:21px;border-top:1px solid #e5e7eb;padding-top:24px;">Bank reconciliation process</h2>
+  <p style="margin:0 0 15px 0;color:#526176;">Use the reconciliation flow to connect the posted outstanding receipt to the actual bank receipt.</p>
+
+  <table width="100%" cellpadding="11" cellspacing="0" border="0" style="border-collapse:collapse;margin:0 0 14px 0;">
+    <tr><td width="48" style="background:#16815d;color:#fff;text-align:center;font-weight:bold;border:1px solid #dce7e1;">A</td><td style="border:1px solid #e1e5ec;"><strong>Create bank receipt</strong><br/><span style="color:#526176;">Confirm the actual receipt, date, journal, and reference to create the draft receipt.</span></td></tr>
+    <tr><td style="background:#16815d;color:#fff;text-align:center;font-weight:bold;border:1px solid #dce7e1;">B</td><td style="border:1px solid #e1e5ec;"><strong>Review and post</strong><br/><span style="color:#526176;">Validate the receipt entries and return to the Reconcile Payment wizard.</span></td></tr>
+    <tr><td style="background:#16815d;color:#fff;text-align:center;font-weight:bold;border:1px solid #dce7e1;">C</td><td style="border:1px solid #e1e5ec;"><strong>Match the credit</strong><br/><span style="color:#526176;">Select the eligible posted Outstanding Receipts credit and confirm the full match.</span></td></tr>
+  </table>
+
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate;background:#fff8e8;border:1px solid #f1dfb6;border-radius:7px;margin:0 0 27px 0;">
+    <tr><td style="padding:14px 16px;color:#79551b;font-size:13px;"><strong>Reconciliation constraints:</strong> company-currency payments only; equal full residual amounts; matching customer, company, account, and currency; and a posted two-line bank receipt are required.</td></tr>
+  </table>
+
+  <!-- REPORTING & CONTROLS -->
+  <h2 style="margin:0 0 8px 0;color:#252044;font-size:21px;border-top:1px solid #e5e7eb;padding-top:24px;">Reporting, audit trail &amp; controls</h2>
+  <p style="margin:0 0 15px 0;color:#526176;">Support day-to-day review with filtered reports and traceable source records.</p>
+
+  <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate;margin:0 0 28px 0;">
     <tr>
-      <td style="color: #174b38; font-size: 14px; line-height: 1.5">
-        <strong>Example: advance of 6,000 SAR</strong> &mdash; Recovered 2,000
-        SAR, still available <strong>4,000 SAR</strong>.<br />
-        Further invoices can use remaining advance. Recovery cannot exceed
-        available advance or eligible untaxed work. Customer, company, currency
-        and project must match invoice.
+      <td width="50%" valign="top" style="padding:16px;border:1px solid #e1e5ec;border-radius:7px;">
+        <h3 style="margin:0 0 9px 0;color:#252044;font-size:16px;">Reporting capabilities</h3>
+        <ul style="margin:0;padding-left:19px;color:#526176;">
+          <li style="margin-bottom:6px;">Dynamic date, company, customer, and project filters.</li>
+          <li style="margin-bottom:6px;">Drill-downs into invoices, advances, and movements.</li>
+          <li style="margin-bottom:6px;">Print and PDF export with A4 landscape support.</li>
+          <li>Multi-sheet Excel export with Summary and Source sheets.</li>
+        </ul>
+      </td>
+      <td width="14"></td>
+      <td width="50%" valign="top" style="padding:16px;border:1px solid #e1e5ec;border-radius:7px;">
+        <h3 style="margin:0 0 9px 0;color:#252044;font-size:16px;">Control &amp; audit trail</h3>
+        <ul style="margin:0;padding-left:19px;color:#526176;">
+          <li style="margin-bottom:6px;">Registered advances and movement records are immutable.</li>
+          <li style="margin-bottom:6px;">Duplicate detection during receipt creation.</li>
+          <li style="margin-bottom:6px;">Reconciliation revalidated under standard Odoo locks.</li>
+          <li>Audit trail links corrections to journal entries.</li>
+        </ul>
       </td>
     </tr>
   </table>
 
-  <!-- Section 4 -->
-  <h2
-    style="
-      color: #392c69;
-      font-size: 20px;
-      margin: 35px 0 15px;
-      padding-left: 12px;
-      border-left: 5px solid #1d9e75;
-    "
-  >
-    4. Invoice Breakdown Matrix
-  </h2>
-  <p style="font-size: 14px; color: #666666; margin-bottom: 15px">
-    Example parameters: untaxed work 10,000 SAR, tax 1,500 SAR, retention 10%,
-    recovery 20%. Gross invoice: <strong>11,500 SAR</strong>.
-  </p>
-
-  <table
-    width="100%"
-    cellpadding="12"
-    cellspacing="0"
-    border="0"
-    style="
-      border-collapse: collapse;
-      border: 1px solid #e2e8f0;
-      margin-bottom: 30px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
-    "
-  >
-    <thead>
-      <tr style="background-color: #ede8f7; text-align: left">
-        <th style="border: 1px solid #e2e8f0; padding: 12px; color: #392c69">
-          Line Item
-        </th>
-        <th style="border: 1px solid #e2e8f0; padding: 12px; color: #392c69">
-          Calculation Formula
-        </th>
-        <th style="border: 1px solid #e2e8f0; padding: 12px; color: #392c69">
-          Amount
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr class="hover-row">
-        <td style="border: 1px solid #e2e8f0">Retention Deduction (Held)</td>
-        <td style="border: 1px solid #e2e8f0">10,000 &times; 10%</td>
-        <td style="border: 1px solid #e2e8f0"><strong>1,000 SAR</strong></td>
-      </tr>
-      <tr class="hover-row">
-        <td style="border: 1px solid #e2e8f0">Advance Recovery</td>
-        <td style="border: 1px solid #e2e8f0">10,000 &times; 20%</td>
-        <td style="border: 1px solid #e2e8f0"><strong>2,000 SAR</strong></td>
-      </tr>
-      <tr class="hover-row" style="background-color: #f0fdf4">
-        <td style="border: 1px solid #e2e8f0">
-          <strong>Immediate Payable Before Cash</strong>
-        </td>
-        <td style="border: 1px solid #e2e8f0">
-          11,500 &minus; 1,000 &minus; 2,000
-        </td>
-        <td style="border: 1px solid #e2e8f0; color: #1d9e75; font-size: 15px">
-          <strong>8,500 SAR</strong>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-
-  <!-- Section 5 -->
-  <h2
-    style="
-      color: #392c69;
-      font-size: 20px;
-      margin: 35px 0 15px;
-      padding-left: 12px;
-      border-left: 5px solid #1d9e75;
-    "
-  >
-    5. Retention Release Lifecycle
-  </h2>
-  <div
-    class="hover-card"
-    style="
-      background: #f6f3fb;
-      border-left: 5px solid #6650a1;
-      border: 1px solid #e2e8f0;
-      padding: 18px;
-      border-radius: 0 6px 6px 0;
-      margin-bottom: 20px;
-    "
-  >
-    <strong style="color: #392c69; font-size: 15px"
-      >Lifecycle Progression:</strong
-    ><br />
-    <span style="font-size: 14px; color: #444">
-      <strong>Held</strong> (retention asset) &nbsp;&rarr;&nbsp;
-      <strong>Released</strong> (customer receivable) &nbsp;&rarr;&nbsp;
-      <strong>Collected later</strong> (receive and reconcile payment)
-    </span>
+  <!-- TECHNICAL INFORMATION -->
+  <div style="background:#f7f6fc;border:1px solid #e5e1f3;border-radius:8px;padding:18px 20px;margin:0 0 25px 0;">
+    <h2 style="margin:0 0 12px 0;color:#252044;font-size:18px;">Technical information</h2>
+    <table width="100%" cellpadding="7" cellspacing="0" border="0" style="border-collapse:collapse;">
+      <tr><td width="34%" style="color:#68758a;border-bottom:1px solid #e5e1f3;">Module technical name</td><td style="color:#252044;border-bottom:1px solid #e5e1f3;"><strong>contract_retention_advance</strong></td></tr>
+      <tr><td style="color:#68758a;border-bottom:1px solid #e5e1f3;">Odoo version</td><td style="color:#252044;border-bottom:1px solid #e5e1f3;">19.0</td></tr>
+      <tr><td style="color:#68758a;border-bottom:1px solid #e5e1f3;">Dependencies</td><td style="color:#252044;border-bottom:1px solid #e5e1f3;">Accounting and Sales</td></tr>
+      <tr><td style="color:#68758a;">Main use case</td><td style="color:#252044;">Contract-based invoicing, advance recovery, and retention tracking</td></tr>
+    </table>
   </div>
-  <p style="margin-bottom: 30px">
-    Posting a release debits Accounts Receivable and credits Retention account.
-    Held balance reduces and amount becomes collectible in receivables. No bank
-    cash is created by this action.
-  </p>
 
-  <!-- Section 6 -->
-  <h2
-    style="
-      color: #392c69;
-      font-size: 20px;
-      margin: 35px 0 15px;
-      padding-left: 12px;
-      border-left: 5px solid #1d9e75;
-    "
-  >
-    6. Bank Reconciliation
-  </h2>
-  <table
-    width="100%"
-    cellpadding="0"
-    cellspacing="0"
-    border="0"
-    style="margin-bottom: 20px"
-  >
-    <tr class="hover-row" style="background: #ffffff">
-      <td
-        style="
-          padding: 15px;
-          border: 1px solid #cbd5e1;
-          border-radius: 6px 0 0 6px;
-          width: 50px;
-          text-align: center;
-          background: #1d9e75;
-          color: #ffffff;
-          font-weight: bold;
-          font-size: 16px;
-        "
-      >
-        A
-      </td>
-      <td
-        style="
-          padding: 15px;
-          border: 1px solid #cbd5e1;
-          border-left: none;
-          border-radius: 0 6px 6px 0;
-          font-size: 14px;
-        "
-      >
-        <strong>Create Bank Receipt:</strong> Confirm actual receipt, choose
-        date/journal/reference &rarr; create a draft.
-      </td>
-    </tr>
-    <tr>
-      <td height="8"></td>
-    </tr>
-    <tr class="hover-row" style="background: #ffffff">
-      <td
-        style="
-          padding: 15px;
-          border: 1px solid #cbd5e1;
-          border-radius: 6px 0 0 6px;
-          width: 50px;
-          text-align: center;
-          background: #1d9e75;
-          color: #ffffff;
-          font-weight: bold;
-          font-size: 16px;
-        "
-      >
-        B
-      </td>
-      <td
-        style="
-          padding: 15px;
-          border: 1px solid #cbd5e1;
-          border-left: none;
-          border-radius: 0 6px 6px 0;
-          font-size: 14px;
-        "
-      >
-        <strong>Review and Post:</strong> Review drafted entry &rarr; post entry
-        &rarr; return to Reconcile Payment wizard.
-      </td>
-    </tr>
-    <tr>
-      <td height="8"></td>
-    </tr>
-    <tr class="hover-row" style="background: #ffffff">
-      <td
-        style="
-          padding: 15px;
-          border: 1px solid #cbd5e1;
-          border-radius: 6px 0 0 6px;
-          width: 50px;
-          text-align: center;
-          background: #1d9e75;
-          color: #ffffff;
-          font-weight: bold;
-          font-size: 16px;
-        "
-      >
-        C
-      </td>
-      <td
-        style="
-          padding: 15px;
-          border: 1px solid #cbd5e1;
-          border-left: none;
-          border-radius: 0 6px 6px 0;
-          font-size: 14px;
-        "
-      >
-        <strong>Full Reconciliation:</strong> Select eligible posted Outstanding
-        Receipts credit &rarr; confirm full match.
-      </td>
-    </tr>
+  <!-- CONTACT CTA -->
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate;background:#252044;border-radius:10px;margin:0 0 18px 0;">
+    <tr><td style="padding:27px 22px;text-align:center;">
+      <h2 style="margin:0 0 8px 0;color:#ffffff;font-size:21px;">Need an Odoo customization?</h2>
+      <p style="margin:0 0 17px 0;color:#e9e7f5;">For questions about this module, enhancements, or Odoo integrations, get in touch.</p>
+      <a href="mailto:sarusarang02@gmail.com?subject=Contract%20Retention%20%26%20Advance%20Recovery%20Enquiry" style="display:inline-block;background:#ffffff;color:#252044;text-decoration:none;font-weight:bold;padding:11px 19px;border-radius:6px;">Contact support: sarusarang02@gmail.com</a>
+    </td></tr>
   </table>
 
-  <table
-    width="100%"
-    cellpadding="16"
-    cellspacing="0"
-    border="0"
-    style="
-      background-color: #fff4d2;
-      border: 1px solid #fde68a;
-      border-left: 5px solid #e6bd45;
-      border-radius: 6px;
-      margin-bottom: 30px;
-    "
-  >
-    <tr>
-      <td style="color: #78350f; font-size: 13px; line-height: 1.5">
-        <strong>Manual reconciliation limits:</strong> Company-currency payments
-        only; equal full residual amounts; matching customer, company, account
-        and currency; posted two-line bank receipt required.
-      </td>
-    </tr>
-  </table>
-
-  <!-- Section 7 & 8 -->
-  <h2
-    style="
-      color: #392c69;
-      font-size: 20px;
-      margin: 35px 0 15px;
-      padding-left: 12px;
-      border-left: 5px solid #1d9e75;
-    "
-  >
-    7 &amp; 8. Reporting, Control &amp; Audit
-  </h2>
-  <table
-    width="100%"
-    cellpadding="0"
-    cellspacing="0"
-    border="0"
-    style="margin-bottom: 30px"
-  >
-    <tr>
-      <td width="48%" style="vertical-align: top">
-        <div
-          class="hover-card"
-          style="
-            background: #f8fafc;
-            border: 1px solid #cbd5e1;
-            border-radius: 6px;
-            padding: 22px;
-            height: 100%;
-          "
-        >
-          <h3
-            style="
-              color: #392c69;
-              margin-top: 0;
-              font-size: 16px;
-              border-bottom: 2px solid #ede8f7;
-              padding-bottom: 8px;
-            "
-          >
-            Reporting Features
-          </h3>
-          <ul
-            style="
-              margin: 12px 0 0 0;
-              padding-left: 18px;
-              font-size: 14px;
-              color: #444;
-            "
-          >
-            <li style="margin-bottom: 8px">
-              Dynamic Date, Company, Customer &amp; Project filters.
-            </li>
-            <li style="margin-bottom: 8px">
-              Drill-downs into Invoices, Advances, and Movements.
-            </li>
-            <li style="margin-bottom: 8px">
-              Print &amp; PDF exports with A4 landscape layout.
-            </li>
-            <li>Multi-sheet Excel exports with bold subtotals.</li>
-          </ul>
-        </div>
-      </td>
-      <td width="4%"></td>
-      <td width="48%" style="vertical-align: top">
-        <div
-          class="hover-card"
-          style="
-            background: #f8fafc;
-            border: 1px solid #cbd5e1;
-            border-radius: 6px;
-            padding: 22px;
-            height: 100%;
-          "
-        >
-          <h3
-            style="
-              color: #392c69;
-              margin-top: 0;
-              font-size: 16px;
-              border-bottom: 2px solid #ede8f7;
-              padding-bottom: 8px;
-            "
-          >
-            Audit &amp; Controls
-          </h3>
-          <ul
-            style="
-              margin: 12px 0 0 0;
-              padding-left: 18px;
-              font-size: 14px;
-              color: #444;
-            "
-          >
-            <li style="margin-bottom: 8px">
-              Immutable advance registration and protection.
-            </li>
-            <li style="margin-bottom: 8px">
-              Automatic duplicate check during receipt creation.
-            </li>
-            <li style="margin-bottom: 8px">
-              Reconciliation validated under database locks.
-            </li>
-            <li>Full connection history for all movement corrections.</li>
-          </ul>
-        </div>
-      </td>
-    </tr>
-  </table>
-
-  <!-- Footer CTA -->
-  <table
-    width="100%"
-    cellpadding="0"
-    cellspacing="0"
-    border="0"
-    style="
-      background: linear-gradient(135deg, #392c69 0%, #4c3b88 100%);
-      border-radius: 8px;
-      margin-top: 40px;
-    "
-  >
-    <tr>
-      <td style="padding: 35px 25px; text-align: center">
-        <h2
-          style="
-            color: #ffffff;
-            font-size: 22px;
-            margin: 0 0 10px;
-            border: none;
-            padding: 0;
-          "
-        >
-          Your Workflow. Your Odoo. Let&rsquo;s Connect.
-        </h2>
-        <p style="color: #ece7f9; font-size: 14px; margin: 0 0 20px">
-          Need Odoo customization, a new feature, or integration with another
-          system? Let&rsquo;s discuss a tailored solution.
-        </p>
-        <a
-          class="btn-contact"
-          href="mailto:sarusarang02@gmail.com?subject=Odoo%20Customization%20%26%20Integration%20Enquiry"
-          style="
-            color: #392c69;
-            background: #ffffff;
-            padding: 12px 28px;
-            border-radius: 5px;
-            text-decoration: none;
-            display: inline-block;
-            font-weight: bold;
-            font-size: 15px;
-          "
-          >sarusarang02@gmail.com</a
-        >
-      </td>
-    </tr>
-  </table>
-
-  <p
-    style="
-      margin-top: 25px;
-      font-size: 12px;
-      color: #777777;
-      text-align: center;
-    "
-  >
-    Module: <strong>contract_retention_advance</strong> &middot; Dependencies:
-    Accounting and Sales
-  </p>
+  <p style="margin:0;text-align:center;color:#7b8798;font-size:12px;">Contract Retention &amp; Advance Recovery · Odoo 19 · contract_retention_advance</p>
 </div>
+
 
 
