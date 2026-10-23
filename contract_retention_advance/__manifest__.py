@@ -8,7 +8,7 @@
     'price': 7.50,
     'currency': 'USD',
     'license': 'OPL-1',
-    "images": ["static/description/banner.png"],
+    "images": ["static/description/contract-banner.png"],
     'depends': ['account', 'sale'],
     'data': ['security/security_rules.xml', 'security/ir.model.access.csv',
              'views/configuration.xml', 'views/contract_views.xml',
